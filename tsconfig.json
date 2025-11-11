@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // === Project structure ===
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // === Module & target ===
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ES2022"],
+    "types": ["node"],
+
+    // === Output control ===
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": false,
+    "removeComments": true,
+
+    // === Type checking ===
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // === Module behavior ===
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // === Performance ===
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
