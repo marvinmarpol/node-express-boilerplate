@@ -1,8 +1,19 @@
-import morgan from 'morgan';
+import { Request, Response, NextFunction } from "express";
+import { logger } from "../utils/logger";
 
-// Define a custom format with timestamp and method
-morgan.token('timestamp', () => new Date().toISOString());
+export const requestLogger = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const start = Date.now();
 
-export const logger = morgan(
-  ':timestamp :method :url :status :response-time ms - :res[content-length] bytes'
-);
+  res.on("finish", () => {
+    const duration = Date.now() - start;
+    logger.info(
+      `${new Date().toISOString()}: ${req.method} ${req.originalUrl} ${res.statusCode} - ${duration}ms`
+    );
+  });
+
+  next();
+};
