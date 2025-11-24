@@ -11,7 +11,7 @@ export const requestLogger = (
   res.on("finish", () => {
     const duration = Date.now() - start;
     logger.info(
-      `${new Date().toISOString()}: ${req.method} ${req.originalUrl} ${res.statusCode} - ${duration}ms`
+      `[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ${res.statusCode} - ${duration}ms`
     );
   });
 

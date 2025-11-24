@@ -2,8 +2,8 @@
 We can swap implementations easily.
 This demonstrates Open/Closed Principle. */
 
-import { IUserRepository } from "./user.interface";
-import { User } from "./user.model";
+import { IUserRepository } from "../user.interface";
+import { User } from "../user.model";
 
 export class InMemoryUserRepository implements IUserRepository {
   private users: User[] = [
